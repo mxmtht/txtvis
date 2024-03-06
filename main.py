@@ -5,7 +5,7 @@ from pyvis.network import Network
 
 nlp = spacy.load("nl_core_news_md")
 
-pyvis_mode = False
+pyvis_mode = True
 
 # networkX things
 G = nx.MultiDiGraph()
@@ -56,18 +56,6 @@ def author_to_entity_network(author, doc):
             else:
                 G.add_edge(author_lastname, entity.text)
                 categories[entity.text] = entity.label_
-
-
-def strip_firstname(ent_list):
-    ent_str_list = []
-    for ent in ent_list:
-        if ent.label_ == "PERSON":
-            ent_lastname = " ".join(ent.text.split(" ")[-1:])
-            ent_str_list.append(ent_lastname)
-        else:
-            ent_str_list.append(ent.text)
-    return ent_str_list
-
 
 def pyvis_network():
     # calculate node sizes (based on in_degrees)

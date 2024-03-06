@@ -30,7 +30,7 @@ categories = {}
 path = 'in/*.txt'
 
 # Entity exclusion settings
-excluded_labels = ['DATE', 'PERCENT', 'CARDINAL', 'ORDINAL', 'WORK_OF_ART']
+excluded_labels = ['DATE', 'PERCENT', 'CARDINAL', 'ORDINAL', 'TIME', 'QUANTITY', 'WORK_OF_ART']
 excluded_pos = ['ADJ', 'ADV', 'VERB']
 excluded_lemmas = []
 
